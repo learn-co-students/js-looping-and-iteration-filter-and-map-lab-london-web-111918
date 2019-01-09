@@ -1,3 +1,8 @@
+drivers = [{ name: 'Sally',   revenue: 400 },
+      { name: 'Annette', revenue: 200 },
+      { name: 'Jim',     revenue: 150 },
+      { name: 'Sally',   revenue: 200 }]
+
 // Code your solution here:
 function driversWithRevenueOver(driver, revenue){
   return driver.filter(driver => {
@@ -14,7 +19,8 @@ function driverNamesWithRevenueOver(driver, revenue){
 
 function exactMatch(drivers, obj){
   let key = Object.keys(obj)[0]
-  let newDrivers = drivers.filter(driver => {
+  let newDrivers = []
+  newDrivers = drivers.filter(driver => {
     return driver[key] === obj[key]
   })
   return newDrivers
@@ -26,9 +32,4 @@ function exactMatchToList(drivers, obj){
 });
 }
 
-exactMatchToList(drivers, {name: Sally})
-
-drivers = [{ name: 'Sally',   revenue: 400 },
-      { name: 'Annette', revenue: 200 },
-      { name: 'Jim',     revenue: 150 },
-      { name: 'Sally',   revenue: 200 }]
+exactMatchToList(drivers, {name: "Sally"})
